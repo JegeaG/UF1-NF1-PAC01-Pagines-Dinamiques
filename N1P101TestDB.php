@@ -1,24 +1,8 @@
 <?php
-$mysqli = new mysqli("localhost", "my_user", "my_password", "world");
 
-/* check connection */
-if ($mysqli->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-}
+/* Procedural style */
 
-/* check if server is alive */
-if ($mysqli->ping()) {
-    printf ("Our connection is ok!\n");
-} else {
-    printf ("Error: %s\n", $mysqli->error);
-}
-
-/* close connection */
-$mysqli->close();
-
-
-$link = mysqli_connect("localhost", "my_user", "my_password", "world");
+$link = mysqli_connect("localhost", "root");
 
 /* check connection */
 if (mysqli_connect_errno()) {
@@ -35,3 +19,24 @@ if (mysqli_ping($link)) {
 
 /* close connection */
 mysqli_close($link);
+
+
+/* Object oriented style */
+
+$mysqli = new mysqli("localhost", "root");
+
+/* check connection */
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+
+/* check if server is alive */
+if ($mysqli->ping()) {
+    printf ("Our connection is ok!\n");
+} else {
+    printf ("Error: %s\n", $mysqli->error);
+}
+
+/* close connection */
+$mysqli->close();
