@@ -2,7 +2,7 @@
 
 /* Procedural style */
 
-$link = mysqli_connect("localhost", "root");
+$link = mysqli_connect(gethostname(), 'root','root'");
 
 /* check connection */
 if (mysqli_connect_errno()) {
@@ -23,7 +23,7 @@ mysqli_close($link);
 
 /* Object oriented style */
 
-$mysqli = new mysqli("localhost", "root");
+$mysqli = new mysqli(gethostname(), 'root','root');
 
 /* check connection */
 if ($mysqli->connect_errno) {
