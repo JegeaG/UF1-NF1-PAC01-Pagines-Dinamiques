@@ -2,7 +2,7 @@
 
 /* Procedural style */
 
-$link = mysqli_connect(gethostname(), 'root','root'");
+$link = mysqli_connect(gethostname(), 'root','root');
 
 /* check connection */
 if (mysqli_connect_errno()) {
